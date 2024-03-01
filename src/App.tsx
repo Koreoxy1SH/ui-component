@@ -198,6 +198,44 @@ function App() {
             Twitter blue
           </Button>
         </Section>
+
+        {/* BUTTON DESTRUCTIVE */}
+        <Section
+          title="Destructive"
+          description="Desctructive button blablablal"
+        >
+          <Button
+            colors={{
+              bg: "bg-red-500",
+              hoverBg: "hover:bg-red-600",
+              focusRing: "focus:ring-red-500",
+            }}
+          >
+            Delete Button
+          </Button>
+          <Button
+            variant="secondary"
+            colors={{
+              text: "text-red-500",
+              hoverBorder: "hover:border-red-500",
+              hoverBg: "hover:bg-red-500",
+              focusRing: "focus:ring-red-500",
+            }}
+          >
+            Unsubscribe
+          </Button>
+
+          <Button
+            variant="tertiary"
+            colors={{
+              text: "text-gray-500",
+              hoverText: "hover:text-gray-700",
+              focusRing: "focus:ring-gray-500",
+            }}
+          >
+            Cancel
+          </Button>
+        </Section>
       </Container>
     </Layout>
   );
