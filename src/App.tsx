@@ -2,10 +2,14 @@ import { Section } from "./components/site/Section";
 import { Container } from "./components/site/Container";
 import { Layout } from "./components/site/Layout";
 import { Button } from "./components/library/Button";
+import { BlockLinkCard, ContentCard } from "./components/library/Card";
+import { SiNextdotjs, SiVite } from "react-icons/si";
+import { Input } from "./components/library/Input";
 
 function App() {
   return (
     <Layout>
+      {/* CONTENT BUTTON UI */}
       <Container
         title="Button"
         description="a button is a widget enalbe users to trigger or event, such as submiiting a form, opening dialog, acncelling an action, or performing a delete operation"
@@ -235,6 +239,105 @@ function App() {
           >
             Cancel
           </Button>
+        </Section>
+      </Container>
+
+      {/* CONTENT CARD UI */}
+      <Container
+        title="Card"
+        description="A card is a flexible and extensible content container"
+      >
+        {/* SECTION SIMPLE CARD */}
+        <Section
+          title="Simple"
+          description="Simple card display content and can provide a distinct link that can be selected."
+        >
+          {/* Simple Card */}
+          <ContentCard
+            title="Card Title"
+            subtitle="CARD SUBTITLE"
+            plaintext="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vero sed quisquam in doloremque, doloribus, iste "
+            link={{
+              url: "#",
+              text: "Card link",
+            }}
+          ></ContentCard>
+        </Section>
+
+        {/* SECTION SIMPLE CARD WITH HEADER AND FOOTER */}
+        <Section
+          title="Simple card with a header and footer"
+          description="add an optional header and footer within a card."
+        >
+          {/* Simple Card with header*/}
+          <ContentCard
+            header="Featured"
+            title="Card Title"
+            subtitle="card subtitle"
+            plaintext="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vero sed quisquam in doloremque, doloribus, iste "
+            link={{
+              url: "#",
+              text: "Card link",
+            }}
+          ></ContentCard>
+
+          {/* Simple Card with footer*/}
+          <ContentCard
+            footer="Last updated 5 mins ago"
+            title="Card Title"
+            subtitle="card subtitle"
+            plaintext="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vero sed quisquam in doloremque, doloribus, iste "
+            link={{
+              url: "#",
+              text: "Card link",
+            }}
+          ></ContentCard>
+        </Section>
+
+        {/* CARD BLOCK LINK */}
+        <Section
+          title="Block Link"
+          description="A simple card enchanced into a slectable block link"
+        >
+          {/* Vite card*/}
+          <BlockLinkCard url="https://vitejs.dev/" text="Vite">
+            <SiVite className="h-10 w-10" />
+          </BlockLinkCard>
+
+          {/* NextJS Card */}
+          <BlockLinkCard url="https://nextjs.org/" text="Next.js">
+            <SiNextdotjs className="h-10 w-10" />
+          </BlockLinkCard>
+        </Section>
+      </Container>
+
+      {/* CONTENT INPUTS UI */}
+      <Container
+        title="Inputs"
+        description="An inputs is a widgedt that allows users to provide data or specify options, which can be submitted as part of a form or used to interact with and manipulate content on a web page."
+      >
+        {/* BASIC INPUT */}
+        <Section title="Basic" description=" Basic input with a placeholder.">
+          {/* Basic Input */}
+          <Input type="text" placeholder="Type things here!" />
+
+          {/* Basic Input disabled */}
+          <Input disabled type="text" placeholder="Disabled" />
+        </Section>
+
+        {/* INPUT LABEL*/}
+        <Section title="Label" description="Input with a label.">
+          <Input type="email" label="Email" placeholder="You@site.com" />
+        </Section>
+
+        {/* INPUT DESCRIPTION*/}
+        <Section title="Description" description="Input with a description.">
+          <Input
+            type="password"
+            label="Password"
+            placeholder="your password supper secret"
+            description="Don't share your password bruh"
+          />
         </Section>
       </Container>
     </Layout>
