@@ -86,6 +86,7 @@ function App() {
               hoverBorder: "hover:border-amber-500",
               hoverBg: "hover:bg-amber-500",
               focusRing: "focus:ring-amber-500",
+              darkHoverBorder: "dark:hover:border-amber-500",
             }}
           >
             Amber Secondary
@@ -98,6 +99,7 @@ function App() {
               hoverBorder: "hover:border-rose-500",
               hoverBg: "hover:bg-rose-500",
               focusRing: "focus:ring-rose-500",
+              darkHoverBorder: "dark:hover:border-rose-500",
             }}
           >
             Rose
@@ -110,6 +112,7 @@ function App() {
               hoverBorder: "hover:border-fuchsia-500",
               hoverBg: "hover:bg-fuchsia-500",
               focusRing: "focus:ring-fuchsia-500",
+              darkHoverBorder: "dark:hover:border-fuchsia-500",
             }}
           >
             Fuchsia
@@ -122,6 +125,7 @@ function App() {
               hoverBorder: "hover:border-indigo-500",
               hoverBg: "hover:bg-indigo-500",
               focusRing: "focus:ring-indigo-500",
+              darkHoverBorder: "dark:hover:border-indigo-500",
             }}
           >
             Indigo
@@ -134,6 +138,7 @@ function App() {
               hoverBorder: "hover:border-[#1da1f2]",
               hoverBg: "hover:bg-[#1da1f2]",
               focusRing: "focus:ring-[#1da1f2]",
+              darkHoverBorder: "dark:hover:border-[#1da1f2]",
             }}
           >
             Twitter blue
@@ -153,6 +158,7 @@ function App() {
               text: "text-amber-500",
               hoverText: "hover:text-amber-700",
               focusRing: "focus:ring-amber-500",
+              darkHoverText: "dark:hover:text-amber-400",
             }}
           >
             Amber Secondary
@@ -164,6 +170,7 @@ function App() {
               text: "text-rose-500",
               hoverText: "hover:text-rose-700",
               focusRing: "focus:ring-rose-500",
+              darkHoverText: "dark:hover:text-rose-400",
             }}
           >
             Rose
@@ -175,6 +182,7 @@ function App() {
               text: "text-fuchsia-500",
               hoverText: "hover:text-fuchsia-700",
               focusRing: "focus:ring-fuchsia-500",
+              darkHoverText: "dark:hover:text-fuchsia-400",
             }}
           >
             Fuchsia
@@ -186,6 +194,7 @@ function App() {
               text: "text-indigo-500",
               hoverText: "hover:text-indigo-700",
               focusRing: "focus:ring-indigo-500",
+              darkHoverText: "dark:hover:text-indigo-400",
             }}
           >
             Indigo
@@ -197,6 +206,7 @@ function App() {
               text: "text-[#1da1f2]",
               hoverText: "hover:text-[#1da1f2]",
               focusRing: "focus:ring-[#1da1f2]",
+              darkHoverText: "dark:hover:text-[#71c9f8]",
             }}
           >
             Twitter blue
@@ -224,6 +234,7 @@ function App() {
               hoverBorder: "hover:border-red-500",
               hoverBg: "hover:bg-red-500",
               focusRing: "focus:ring-red-500",
+              darkHoverBorder: "dark:hover:border-red-500",
             }}
           >
             Unsubscribe
@@ -235,6 +246,7 @@ function App() {
               text: "text-gray-500",
               hoverText: "hover:text-gray-700",
               focusRing: "focus:ring-gray-500",
+              darkHoverText: "dark:hover:text-zinc-400",
             }}
           >
             Cancel
