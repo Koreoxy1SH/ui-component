@@ -69,7 +69,7 @@ export const Button: ButtonComponent = ({
           colorProps.text || "text-emerald-500"
         } ${colorProps.hoverText || "hover:text-emerald-700"} ${
           colorProps.focusRing || "focus:ring-emerald-500"
-        } ${colorProps.darkHoverText || "dark:hover:text-emerald-400"}`;
+        } ${colorProps.darkHoverText || "dark:hover:text-emerald-400i"}`;
       default:
         return "";
     }
