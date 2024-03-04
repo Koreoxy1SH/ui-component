@@ -2,19 +2,32 @@
 
 import { twMerge } from "tailwind-merge";
 
-type CardContainerProps = React.HTMLAttributes<HTMLDivElement>;
+type CardContainerProps = React.HTMLAttributes<HTMLDivElement> & {
+  widthLimit?: "none" | "xs" | "sm" | "md" | "lg";
+};
+
+const cardWidths = {
+  none: "",
+  xs: "max-w-xs",
+  sm: "max-w-sm",
+  md: "max-w-md",
+  lg: "max-w-lg",
+};
 
 export const CardContainer: React.FC<CardContainerProps> = ({
   className,
   children,
+  widthLimit = "xs",
   ...props
 }) => {
   // Base classes
   const baseClasses: string =
     "rounded-xl border bg-white shadow-sm dark:border-zinc-700 dark:bg-zinc-800 dark:shadow-zinc-700/[.7]";
   const mergedClasses = twMerge([baseClasses, className]);
+
+  const widthClass = twMerge(["w-full", cardWidths[widthLimit]]);
   return (
-    <div className="w-full max-w-xs" {...props}>
+    <div className={widthClass} {...props}>
       <div className={mergedClasses}>{children}</div>
     </div>
   );
@@ -28,6 +41,7 @@ export const ContentCard = ({
   subtitle,
   plaintext,
   link,
+  widthLimit,
   children,
 }: {
   header?: string;
@@ -39,10 +53,11 @@ export const ContentCard = ({
     url: string;
     text: string;
   };
+  widthLimit?: CardContainerProps["widthLimit"];
   children?: React.ReactNode;
 }) => {
   return (
-    <CardContainer>
+    <CardContainer widthLimit={widthLimit}>
       {header && (
         <div className="rounded-t-xl border-b bg-gray-100 px-4 py-3 md:px-5 md:py-4 dark:border-zinc-700 dark:bg-zinc-800">
           <p className="mt-1 text-sm text-gray-500 dark:text-zinc-500">
@@ -92,10 +107,16 @@ export const BlockLinkCard = ({
   url,
   text,
   children,
+  CustomLinkComponent,
+  CustomLinkProps = {},
+  widthLimit,
 }: {
   url?: string; // URL for the link. If none provide, default to "#"
   text?: string; // The text content to be displayed inside the card
   children: React.ReactNode; //children element that will be rendered inside the card
+  CustomLinkComponent?: React.ComponentType<any>;
+  CustomLinkProps?: any;
+  widthLimit?: CardContainerProps["widthLimit"];
 }) => {
   const linkClasses: string = "flex flex-col items-center p-6 sm:p-10";
 
@@ -106,10 +127,24 @@ export const BlockLinkCard = ({
     </>
   );
   return (
-    <CardContainer className="text-gray-800 transition-colors hover:bg-gray-200/50 dark:text-white dark:hover:bg-zinc-700">
-      <a href={url || "#"} className={linkClasses} target="_blank">
-        {linkContent}
-      </a>
+    <CardContainer
+      widthLimit={widthLimit}
+      className="text-gray-800 transition-colors hover:bg-gray-200/50 dark:text-white dark:hover:bg-zinc-700"
+    >
+      {CustomLinkComponent ? (
+        <CustomLinkComponent className={linkClasses} {...CustomLinkProps}>
+          {linkContent}
+        </CustomLinkComponent>
+      ) : (
+        <a
+          href={url || "#"}
+          className={linkClasses}
+          target="_blank"
+          {...(CustomLinkProps as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+        >
+          {linkContent}
+        </a>
+      )}
     </CardContainer>
   );
 };
